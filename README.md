@@ -1,5 +1,5 @@
 # ddtime
-ddtime is a script that helps you to find out with which other tees you finished a map in team 0.
+ddtime is a script that helps you to find out with which other tees you finished a map in team 0 in DDNet.
 
 ## Usage
 
