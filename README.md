@@ -1,12 +1,20 @@
 # ddtime
 ddtime is a script that helps you to find out with which other tees you finished a map in team 0 in DDNet.
 
-## Usage
+## Prerequisite
+Install sqlite3 if you haven't: 
+- Arch-Linux: `pacman -S sqlite`
+- Debian/Ubuntu: `apt install sqlite3`
 
 Download the DDNet Sqlite database [here](https://ddnet.tw/stats/ddnet.sqlite.zip) and put it in the same folder as `ddtime.sh`.
 Make sure `ddtime.sh` has executable permissions. If not do `chmod +x ddtime.sh`.
 
-Then use it like that:
+
+
+## Usage
+
+
+
 ```
 ./ddtime.sh map [name (default: marzzzello)] [difftime in minutes (default: 10)]
 ```
