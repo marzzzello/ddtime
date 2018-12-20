@@ -9,12 +9,7 @@ Install sqlite3 if you haven't:
 Download the DDNet Sqlite database [here](https://ddnet.tw/stats/ddnet.sqlite.zip) and put it in the same folder as `ddtime.sh`.
 Make sure `ddtime.sh` has executable permissions. If not do `chmod +x ddtime.sh`.
 
-
-
 ## Usage
-
-
-
 ```
 ./ddtime.sh map [name (default: marzzzello)] [difftime in minutes (default: 10)]
 ```
