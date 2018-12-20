@@ -27,11 +27,18 @@ if [[ -z $1 ]]; then
 	exit;
 fi
 
+IFS=$'\n'
+for OUTPUT in $(echo "select timestamp from race where name='$name' and map='$map'
+order by Timestamp asc;" | sqlite3 "$db" --noheader)
+do
+    
+    echo $OUTPUT
+    echo "select Name, 
+    round((strftime('%s', Timestamp) - strftime('%s', '$OUTPUT')) / 60.0,1) as 'Difference in minutes',
+    round(Time/60) as 'Finish time in minutes' 
+    from race where Map='$map' 
+    AND Timestamp >= datetime('$OUTPUT', '-$t minutes')
+    AND Timestamp <= datetime('$OUTPUT', '+$t minutes')
+    order by Timestamp asc;" | sqlite3 "$db" --column --header
  
-echo "select Name, 
-(SELECT round((strftime('%s', Timestamp) - strftime('%s',(select timestamp from race where name='$name' and map='$map') )) / 60.0,1)) as 'Difference in minutes',
-round(Time/60) as 'Finish time in minutes' from race where Map='$map' 
-AND Timestamp >= (select datetime(timestamp, '-$t minutes') from race where name='$name' and map='$map') 
-AND Timestamp <= (select datetime(timestamp, '+$t minutes') from race where name='$name' and map='$map') 
-order by Timestamp asc;" | sqlite3 "$db" --column --header
- 
+done
