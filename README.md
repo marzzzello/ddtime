@@ -7,7 +7,7 @@ Install sqlite3 if you haven't:
 - Debian/Ubuntu: `apt install sqlite3`
 
 ~~Download the DDNet Sqlite database [here](https://ddnet.tw/stats/ddnet.sqlite.zip) and put it in the same folder as `ddtime.sh`.
-Make sure `ddtime.sh` has executable permissions. If not do `chmod +x ddtime.sh`.~~
+Make sure `ddtime.sh` has executable permissions. If not do `chmod +x ddtime.sh`.~~  
 ddtime will download the sqlite database if it's not available or outdated.
 
 ## Usage
